@@ -99,9 +99,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TechincalTask\BidOne.TechincalTask.csproj">
+    <ProjectReference Include="..\TechincalTask\BidOne.TechincalTask.Web.csproj">
       <Project>{73328F91-6B3D-43E3-A7F0-05BB0C4E27A7}</Project>
-      <Name>BidOne.TechincalTask</Name>
+      <Name>BidOne.TechincalTask.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
