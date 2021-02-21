@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using BidOne.TechnicalTask.Lib.Models;
 
 namespace BidOne.TechincalTask.Controllers
 {
@@ -21,6 +22,17 @@ namespace BidOne.TechincalTask.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public JsonResult AjaxMethod(Person person)
+        {
+            Person p = new Person
+            {
+                FirstName = person.FirstName,
+                LastName = person.LastName
+            };
+
+            return Json(p);
         }
     }
 }
