@@ -13,7 +13,7 @@ namespace BidOne.TechincalTask
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                namespaces: new[] { "BidOne.TechnicalTask.Controllers" }
+                namespaces: new[] { "BidOne.TechincalTask.Web.Controllers" }
             );
         }
     }

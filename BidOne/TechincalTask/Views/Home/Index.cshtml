@@ -8,11 +8,17 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Index</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-
+   
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/angular.min.js"></script>
@@ -31,9 +37,8 @@
                     headers: { "Content-Type": "application/json" }
                 });
 
-                post.success(function (data, status) {
-
-                    $window.alert("Hello: " + data.Name + " .\nCurrent Date and Time: " + data.DateTime);
+                post.success(function (data, status) {  
+                    $window.alert(data.Message);
                 });
 
                 post.error(function (data, status) {
@@ -45,15 +50,18 @@
     </script>
     <div ng-app="MyApp" ng-controller="MyController">
         <form ng-submit="submitForm()" name="frmPerson">
-            First Name:
-            <input type="text" ng-model="Person.FirstName" name="FirstName" placeholder="Enter First name" requiredng-minlength="4" ng-maxlength="14" required ng-pattern="/^[a-zA-Z]*$/" />
-            @*<span class="error" ng-show="(frmPerson.$dirty||submitted)&&frmPerson.FirstName.$error.required">First name is Required</span>*@
-            <br />
-            Last Name:
-            <input type="text" ng-model="Person.LastName" name="LastName" placeholder="Enter Last name" requiredng-minlength="4" ng-maxlength="14" required ng-pattern="/^[a-zA-Z]*$/" />
-            @*<span class="error" ng-show="(frmPerson.$dirty||submitted)&&frmPerson.LastName.$error.required">Last name is Required</span>*@
-            <br />
-            <input type="submit" value="Submit" ng-disabled="myForm.$invalid">
+            <div class="form-group">
+                <label for="firstNameLbl">First Name</label>
+                <input type="text" class="form-control" ng-model="Person.FirstName" name="FirstName" placeholder="Enter First name" requiredng-minlength="4" ng-maxlength="14" required pattern="^[A-Za-z]+$" ng-pattern-restrict />
+                <br />
+            </div>
+            <div class="form-group">
+                <label for="LastNameLbl">Last Name</label>
+                <input type="text" class="form-control" ng-model="Person.LastName" name="LastName" placeholder="Enter Last name" requiredng-minlength="4" ng-maxlength="14" required pattern="^[A-Za-z]+$" ng-pattern-restrict />
+                <br />
+
+            </div>
+            <input type="submit" class="btn btn-primary" value="Submit" ng-disabled="myForm.$invalid">
         </form>
     </div>
 </body>

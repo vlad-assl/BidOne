@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 using BidOne.TechnicalTask.Lib.Models;
 using BidOne.TechnicalTask.Lib.Repositories.Interfaces;
@@ -7,8 +8,10 @@ using Newtonsoft.Json;
 
 namespace BidOne.TechnicalTask.Lib.Repositories
 {
+
     public class FileRepository : IFileRepository
     {
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
         public File ReadFile(string filePath)
         {
@@ -25,10 +28,18 @@ namespace BidOne.TechnicalTask.Lib.Repositories
             };
             try
             {
-                System.IO.File.WriteAllText(newFile.FilePath, JsonConvert.SerializeObject(model));
+                string localName = newFile.FilePath + newFile.FileName;
+
+                if (!System.IO.File.Exists(localName))
+                {
+                    System.IO.File.WriteAllText(localName, JsonConvert.SerializeObject(model));
+                    logger.Info("File successfully created");
+                }
+
             }
-            catch (System.IO.IOException)
+            catch (System.IO.IOException ex)
             {
+                logger.Error(ex.Message);
                 return false;
             }
             return true;

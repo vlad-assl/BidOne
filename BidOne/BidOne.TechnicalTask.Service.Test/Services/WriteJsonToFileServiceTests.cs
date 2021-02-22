@@ -22,7 +22,7 @@ namespace BidOne.TechnicalTask.Tests.Services
         public void WritePersonToFileSuccess()
         {
            
-            Person person = new Person { FirstName = "Vladan", LastName = "Neziri" };
+            Person person = new Person { FirstName = "Vladanss", LastName = "Neziri" };
             
             File f = new File { FileName = person.FirstName + "_" + person.LastName, FilePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) };
 

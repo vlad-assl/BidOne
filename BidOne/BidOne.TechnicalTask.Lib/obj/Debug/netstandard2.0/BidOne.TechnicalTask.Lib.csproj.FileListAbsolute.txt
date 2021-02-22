@@ -6,4 +6,3 @@ C:\Development\Projects\BidOne\BidOne\BidOne.TechnicalTask.Lib\obj\Debug\netstan
 C:\Development\Projects\BidOne\BidOne\BidOne.TechnicalTask.Lib\obj\Debug\netstandard2.0\BidOne.TechnicalTask.Lib.csproj.CoreCompileInputs.cache
 C:\Development\Projects\BidOne\BidOne\BidOne.TechnicalTask.Lib\obj\Debug\netstandard2.0\BidOne.TechnicalTask.Lib.dll
 C:\Development\Projects\BidOne\BidOne\BidOne.TechnicalTask.Lib\obj\Debug\netstandard2.0\BidOne.TechnicalTask.Lib.pdb
-C:\Development\Projects\BidOne\BidOne\BidOne.TechnicalTask.Lib\obj\Debug\netstandard2.0\BidOne.TechnicalTask.Lib.csprojAssemblyReference.cache
