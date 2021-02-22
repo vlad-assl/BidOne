@@ -8,7 +8,9 @@ using Newtonsoft.Json;
 
 namespace BidOne.TechnicalTask.Lib.Repositories
 {
-
+    /// <summary>
+    /// This class will be used to create the file and save it to the App_Data/JsonFiles folder
+    /// </summary>
     public class FileRepository : IFileRepository
     {
         private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
