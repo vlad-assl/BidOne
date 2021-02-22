@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\BidOne",
+    "\\BidOne\\TechincalTask",
+    "\\BidOne\\TechincalTask.Tests"
   ],
+  "SelectedNode": "\\BidOne\\TechincalTask\\Models",
   "PreviewInSolutionExplorer": false
 }
